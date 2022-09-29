@@ -1,2 +1,103 @@
 # lv-bootstrap
 Install Bootstrap di Laravel
+
+
+1- buat proyek laravel
+    - composer create-project laravel/laravel --prefer-dist l9-bootstrap
+    atau
+    - laravel l9-bootstrap baru
+
+    Masuk ke dalam l9-bootstrap.
+
+    cd l9-bootstrap
+  
+2-Instal Laravel/UI
+    Laravel UI adalah perpustakaan resmi yang menawarkan komponen UI selektif atau yang telah ditentukan sebelumnya.
+    Paket laravel/ui dilengkapi dengan perancah login dan registrasi untuk
+    React, Vue, jQuery, dan tata letak Bootstrap.
+
+    Jalankan perintah untuk menginstal Laravel/UI.
+    
+     komposer membutuhkan laravel/ui
+
+3- Instal Bootstrap di Laravel
+    Kami telah berhasil menginstal paket laravel/ui menggunakan Composer, sekarang di langkah ini,
+    kita akan mengerti bagaimana cara menginstall Bootstrap CSS Framework terbaru dengan mudah menggunakan perintah berikut.
+
+    Jalankan perintah untuk menginstal Bootstrap di proyek Laravel
+
+    php artisan ui bootstrap
+
+4- Instal Bootstrap Auth Scaffolding
+    Jalankan perintah berikut untuk Menginstal perancah auth dengan Bootstrap
+    
+    php artisan ui bootstrap --auth
+
+    Kami telah berhasil menginstal bootstrap, dan Anda dapat memastikannya dengan membuka resource/js/bootstrap.js.
+    Anda akan melihat bahwa popper.js dan jQuery telah ditambahkan ke file JavaScript bootstrap.
+    
+5- Instal Paket Bootstrap
+    Sebelum Anda menginstal Paket Bootstrap, Anda perlu memeriksa apakah Node js sudah diinstal atau belum.
+    - Jalankan perintah ini di command prompt untuk memeriksa
+      # untuk simpul
+      simpul -v
+      # untuk npm
+      npm -v
+    - Instal paket bootstrap
+      instal npm
+ 6- Kompilasi Aset
+    Seperti yang kita lihat, folder resources/sass _variables.scss dan file app.scss telah ditambahkan
+    dengan variabel dan font sass.
+  
+    @import url('https://fonts.googleapis.com/css?family=Nunito');
+    // Variabel
+    @impor 'variabel';
+    // bootstrap
+    @import '~bootstrap/scss/bootstrap';
+ 
+ Sekarang, kita harus menjalankan perintah di bawah ini untuk kompilasi aset.
+ 
+    #untuk pengembangan
+    npm menjalankan dev
+
+    # untuk produksi
+    npm menjalankan produksi
+ 
+    Perintah di atas mengkompilasi file CSS dan JavaScript dari folder resources/js dan resources/sass ke folder publik.
+
+
+    - Otomatiskan Perubahan SASS dan JS
+
+    Jika Anda malas dan tidak ingin menjalankan perintah npm run dev setiap kali Anda melakukan perubahan pada file SASS dan JS,
+    anda harus menggunakan perintah berikut.
+
+       jam tangan npm run
+
+
+    Itu mengawasi file Anda dan mengkompilasi kode secara otomatis jika mendeteksi perubahan yang dibuat dalam file SASS dan JS.
+
+
+ 
+ 7- Menggunakan Bootstrap di Laravel Blade Template
+
+Sekarang, file sass dipatuhi ke satu file CSS di dalam folder publik, dan kita dapat mendefinisikan js dan
+jalur CSS dan gunakan Bootstrap js dan CSS di template blade Laravel.
+ </head>
+      <script src="{{ aset('js/app.js') }}" defer></script>
+      <link href="{{ aset('css/app.css') }}" rel="stylesheet">
+ </head>
+ <tubuh>
+ <div class="card">
+        <div class="card-body">
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Alamat email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Contoh textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+ </tubuh>
